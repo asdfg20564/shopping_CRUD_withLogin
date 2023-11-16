@@ -1,6 +1,7 @@
 "use strict";
 const { Model } = require("sequelize");
 const bcrypt = require("bcrypt");
+require("dotenv").config();
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -38,8 +39,11 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   User.beforeCreate(async (user) => {
-    const saltOrRounds = 10; //salt will be generated with the specified number of rounds and used.
-    const hashedPasswd = await bcrypt.hash(user.passwd, saltOrRounds);
+    //salt will be generated with the specified number of rounds and used.
+    const hashedPasswd = await bcrypt.hash(
+      user.passwd,
+      process.env.SALT_ROUND_KEY
+    );
     user.passwd = hashedPasswd;
   });
   return User;
