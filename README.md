@@ -2,9 +2,11 @@
 
 shopping_CRUD + login
 
-npm install express, mysql2, sequelize, sequelize-cli, jsonwebtoken, cookie-parser, dotenv
+npm install express, mysql2, sequelize, nodemon, sequelize-cli, jsonwebtoken, cookie-parser, dotenv
 
 env : MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_DATABASE, MYSQL_HOST, TOKEN_KEY, SALT_ROUND_KEY
+
+실행 : npx nodemon app.js
 
 api 요청 명세서 : https://docs.google.com/spreadsheets/d/1ksj2iN7nyEOqSt3KDdvTjov7pggK9extDC5TAqggsnQ/edit?usp=sharing
 
