@@ -10,6 +10,7 @@ module.exports = async (req, res, next) => {
 
   if (!authToken || authType !== "Bearer") {
     return res.status(401).send({
+      success: false,
       errorMessage: "로그인 후 이용 가능한 기능입니다.",
     });
   }
@@ -25,6 +26,7 @@ module.exports = async (req, res, next) => {
   } catch (err) {
     //valify failed
     res.status(401).send({
+      success: false,
       errorMessage: "로그인 후 이용 가능한 기능입니다.",
     });
   }

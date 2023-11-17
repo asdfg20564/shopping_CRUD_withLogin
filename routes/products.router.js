@@ -12,6 +12,7 @@ router.get("/product/:productId", async (req, res) => {
     include: User,
     required: true, //inner join
   });
+
   if (product) {
     const [resData] = product.map((products) => ({
       productId: products.productId,
@@ -84,7 +85,6 @@ router.put("/product/:productId", authMiddleware, async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
     return res.status(400).json({
       success: false,
       errorMessage: "데이터 형식이 올바르지 않습니다.",
@@ -119,7 +119,6 @@ router.delete("/product/:productId", authMiddleware, async (req, res) => {
         .json({ success: false, errorMessage: "상품 조회에 실패하였습니다." });
     }
   } catch (error) {
-    console.log(error);
     return res.status(400).json({
       success: false,
       errorMessage: "데이터 형식이 올바르지 않습니다.",
@@ -150,7 +149,6 @@ router.post("/products/", authMiddleware, async (req, res) => {
     });
     res.json({ success: true, message: "판매 상품을 등록하였습니다." });
   } catch (error) {
-    console.log(error);
     return res.status(400).json({
       success: false,
       errorMessage: "데이터 형식이 올바르지 않습니다.",

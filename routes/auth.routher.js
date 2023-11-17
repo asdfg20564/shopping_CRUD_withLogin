@@ -23,7 +23,7 @@ router.post("/signup", async (req, res) => {
     });
   }
 
-  //validation 추가 : 비밀번호 최소 6자 이상. hash된 값을 저장하도록 바꾼다.
+  //validation password length
   if (password.length < 6) {
     return res.status(400).send({
       success: false,
@@ -92,7 +92,6 @@ router.post("/login", async (req, res) => {
 
   try {
     const isPasswordValid = await bcrypt.compare(password, user.passwd);
-    console.log(isPasswordValid);
     if (!user || !isPasswordValid) {
       return res.status(400).send({
         success: false,
@@ -114,6 +113,7 @@ router.post("/login", async (req, res) => {
     expires: expires,
     path: "/",
   });
+
   res.status(200).send({ success: true, message: "로그인 성공!", token });
 });
 
