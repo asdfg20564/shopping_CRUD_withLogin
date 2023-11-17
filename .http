@@ -1,0 +1,60 @@
+### SIGN UP
+POST http://52.78.119.77/auth/signup
+Content-Type: application/json
+
+{
+  "email": "newuser@naver.com",
+  "nickname": "newuser",
+  "password": "231117",
+  "confirmPassword": "231117"
+}
+
+### http://52.78.119.77 == https://ec2-52-78-119-77.ap-northeast-2.compute.amazonaws.com
+### Login
+POST http://52.78.119.77/auth/login
+Content-Type: application/json
+
+{
+  "email": "newuser@naver.com",
+  "password": "231117"
+}
+
+### My page
+GET http://52.78.119.77/api/mypage
+
+### products list
+
+GET http://52.78.119.77/api/products
+
+### products list sort
+
+GET http://52.78.119.77/api/products?sort=method:ASC
+
+### product detail
+
+GET http://52.78.119.77/api/product/1
+
+### product post
+
+POST http://52.78.119.77/api/products
+Content-Type: application/json
+
+{
+  "title":"해피",
+  "content": "행복을 팝니다."
+}
+
+### product update
+
+PUT http://52.78.119.77/api/product/1
+Content-Type: application/json
+
+{
+  "title":"해피",
+  "content": "행복을 팝니다.",
+  "status": "SOLD_OUT"
+}
+
+
+### product delete
+DELETE http://52.78.119.77/api/product/1
