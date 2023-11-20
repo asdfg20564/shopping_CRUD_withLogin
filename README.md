@@ -40,6 +40,7 @@ DB ERD : https://www.erdcloud.com/d/DFrZZXjrQHmzsG4hk
 - 인증과 인가가 무엇인지 각각 설명해 주세요.
 
    _인증 : Authentication, 사용자가 누구인지 서버에게 인증한다._
+  
   _인가 : Authorization, 인증된 사용자에게 특정 권한을 인가한다._
   
 - 과제에서 구현한 Middleware는 인증에 해당하나요? 인가에 해당하나요? 그 이유도 알려주세요.
@@ -51,9 +52,13 @@ DB ERD : https://www.erdcloud.com/d/DFrZZXjrQHmzsG4hk
 - 과제를 진행하면서 `사용한 Http Status Code`를 모두 나열하고, 각각이 `의미하는 것`과 `어떤 상황에 사용`했는지 작성해 주세요.
 
   _200: ok, 기본 성공._
+  
   _201: created, 회원 가입 등 정보 생성._
+  
   _400: bad request, 올바르지 못한 입력 등 서비스 불가._
+  
   _401: Unauthorized, 권한 없음._
+  
   _404: not found, 찾을 수 없음._
   
 
