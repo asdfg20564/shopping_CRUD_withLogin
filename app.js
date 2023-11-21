@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const cookieParser = require("cookie-parser");
 const productRouter = require("./routes/products.router");
-const authRouter = require("./routes/auth.routher");
+const authRouter = require("./routes/auth.router");
 
 app.use(express.json());
 app.use(cookieParser());
