@@ -40,8 +40,8 @@ module.exports = (sequelize, DataTypes) => {
 
   User.beforeCreate(async (user) => {
     //salt will be generated with the specified number of rounds and used.
-    const salyRoundKey = parseInt(process.env.SALT_ROUND_KEY);
-    const hashedPasswd = await bcrypt.hash(user.passwd, salyRoundKey);
+    const saltRoundKey = parseInt(process.env.SALT_ROUND_KEY);
+    const hashedPasswd = await bcrypt.hash(user.passwd, saltRoundKey);
     user.passwd = hashedPasswd;
   });
   return User;
